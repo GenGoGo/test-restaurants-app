@@ -10,9 +10,7 @@ const httpOptions = {
 @Injectable()
 export class MainService {
 
-  constructor(private http: HttpClient) {
-    console.log("debug MainService::constructor");
-  }
+  constructor(private http: HttpClient) { }
 
   getData(lat: number, lng: number): any {
     let urlQuery = `//api.foursquare.com/v2/venues/explore?ll=${lat},${lng}&section=food&venuePhotos=${AppConfig.settings.venuePhotos}&oauth_token=${AppConfig.settings.oauth_token}`;
