@@ -1,0 +1,154 @@
+@import '../../../styles/_color.scss';
+@import '../../../styles/_mixins.scss';
+
+.filter {
+  @extend %clearfix;
+  background-color: $color3;
+  margin-bottom: 15px;
+  padding: 10px;
+
+  &-count {
+    float: left;
+  }
+
+  &-view {
+    float: right;
+  }
+
+  &-item {
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-btn {
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-count,
+  &-viewicon {
+    font-size: 18px;
+  }
+
+  .apply .filter-btn {
+    color: forestgreen;
+  }
+}
+
+
+.row {
+  @extend %clearfix;
+  margin-top: -30px;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  &-item {
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+  }
+
+  &-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #000;
+  }
+
+  &-opts, &-data {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-data {
+    margin-top: 3px;
+  }
+
+  &-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  &-link {
+    color: blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: green;
+      cursor: pointer;
+    }
+  }
+
+  &-value {
+    font-style: italic;
+  }
+}
+
+@media(min-width: 768px) {
+  .row {
+    &.cols {
+      &-2 {
+        .row-item {
+          width: 50%;
+
+          &:nth-child(2n+1) {
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+  .row {
+    &.cols {
+      &-4 .row-item {
+        width: 33%;
+
+        &:nth-child(3n+1) {
+          clear: both;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .row {
+    &.cols {
+      &-4 .row-item {
+        width: 25%;
+
+        &:nth-child(4n+1) {
+          clear: both;
+        }
+      }
+    }
+  }
+}

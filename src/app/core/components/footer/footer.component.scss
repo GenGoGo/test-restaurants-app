@@ -1,0 +1,12 @@
+@import '../../../styles/_color.scss';
+
+.footer {
+  &-copy {
+    display: block;
+    margin: 0;
+  }
+
+  &-copy, &-link {
+    color: $color1;
+  }
+}

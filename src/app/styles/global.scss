@@ -1,0 +1,115 @@
+@import './_color.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.page {
+  min-width: 300px;
+}
+
+.page, .wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+
+.header, .footer, .main {
+  display: block;
+}
+
+.header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: $color2;
+  padding: 5px 0;
+
+  &-title, &-link, &-logo {
+    display: block;
+  }
+
+  &-link, &-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  &-link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  padding-top: 65px;
+  padding-bottom: 51px;
+}
+
+.footer {
+  bottom: 0;
+  background: $color2;
+  padding: 10px 0;
+}
+
+.relative-content {
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &-img {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: auto;
+  }
+}
+
+
+@media(min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media(min-width: 1024px) {
+  .container {
+    width: 992px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

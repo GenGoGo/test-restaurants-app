@@ -1,0 +1,40 @@
+<div class="loading" *ngIf="!init">
+  <img class="loading-img" src="assets/images/loader.gif" width="32" height="32">
+</div>
+<div class="container" *ngIf="init">
+  <div class="content">
+    <div class="filter">
+      <p class="filter-count">Count items: {{ count }}</p>
+      <ul class="filter-view">
+        <li [className]="viewCols === 1 ? 'filter-item apply' : 'filter-item'">
+          <button class="filter-btn" (click)="handleView(1)">
+            <i class="icon-list filter-viewicon"></i>
+          </button>
+        </li>
+        <li [className]="viewCols === 2 ? 'filter-item apply' : 'filter-item'">
+          <button class="filter-btn" (click)="handleView(2)">
+            <i class="icon-x2 filter-viewicon"></i>
+          </button>
+        </li>
+        <li [className]="viewCols === 4 ? 'filter-item apply' : 'filter-item'">
+          <button class="filter-btn" (click)="handleView(4)">
+            <i class="icon-x4 filter-viewicon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="row cols-{{viewCols}}">
+      <div class="row-item" *ngFor='let item of items'>
+        <img class="row-image" src="{{item.image.prefix}}{{widthImg}}x{{heightImg}}{{item.image.suffix}}" width="{{widthImg}}" height="{{heightImg}}" alt="{{item.name}}" />
+        <h2 class="row-title">{{item.name}}</h2>
+        <ul class="row-opts">
+          <li class="row-data" *ngFor='let opt of item.opts'>
+            <strong class="row-label">{{ opt.label }}:</strong>
+            <a class="row-link" href="{{ opt.value }}" target="_blank" rel="noreferrer noopener" *ngIf="opt.link">{{ opt.value }}</a>
+            <i class="row-value" *ngIf="!opt.link">{{ opt.value }}</i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
